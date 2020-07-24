@@ -10,12 +10,14 @@ export default function AboutPage() {
     {
       img: stockViewer,
       title: "Stock Viewer Website",
+      link: "https://jadenbui.azurewebsites.net/",
       discription:
         "An web application for viewing stock. Using ReactJS for the front-end and NodeJS (Express) for the backend along with MySQL database for the static stock data.",
     },
     {
       img: socialMedia,
       title: "Social Media Website",
+      link: "https://websocialapp-8619b.web.app/",
       discription:
         "An web application about social media platform. Using ReactJS for the front-end and NodeJS (Express) for the backend along with Firebase cloud functions.",
     },
@@ -60,6 +62,11 @@ export default function AboutPage() {
             <div key={inx} className="card">
               <img src={product.img} />
               <h3>{product.title}</h3>
+              {product.link ? (
+                <a href={product.link} target="_blank">
+                  <i class="fa fa-eye" aria-hidden="true"></i> Live View
+                </a>
+              ) : null}
               <p>{product.discription}</p>
             </div>
           ))}
