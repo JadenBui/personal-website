@@ -55,7 +55,7 @@ export default function AboutPage() {
         <p className="section__subtitle section__subtitle--work">
           Here are some of my works in the past few months
         </p>
-        <ScrollContainer className="scroll-container">
+        <ScrollContainer className="scroll-container" hideScrollbars="false">
           {works.map((product, inx) => (
             <div key={inx} className="card">
               <img src={product.img} />

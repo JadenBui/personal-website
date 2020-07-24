@@ -311,7 +311,7 @@ section {
 .scroll-container {
   display: flex;
   width: 100%;
-  height: 480px;
+  height: 500px;
 }
 
 @media (max-width: 420px) {
@@ -320,8 +320,7 @@ section {
   }
   .scroll-container {
     display: flex;
-    height: 400px;
-    width: 365px;
+    height: 415px;
   }
 }
 
