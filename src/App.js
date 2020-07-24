@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef, Fragment } from "react";
+import IntroducePage from "./Pages/IntroducePage";
+import AboutPage from "./Pages/AboutPage";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 function App() {
+  const skillRef = useRef();
+  const aboutRef = useRef();
+
+  const onLinkClick = (link) => {
+    switch (link) {
+      case "about":
+        aboutRef.current.scrollIntoView({
+          behavior: "smooth",
+        });
+        break;
+      case "skill":
+        skillRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+        break;
+      case "work":
+        aboutRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+        });
+    }
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar onLinkClick={onLinkClick} />
+      <div ref={skillRef}>
+        <IntroducePage />
+      </div>
+      <div ref={aboutRef}>
+        <AboutPage />
+      </div>
+      <Footer />
     </div>
   );
 }
