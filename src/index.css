@@ -318,9 +318,13 @@ section {
   .card img {
     max-height: 148px;
   }
+
+  .card {
+    height: 400px;
+  }
   .scroll-container {
     display: flex;
-    height: 415px;
+    height: 435px;
   }
 }
 
