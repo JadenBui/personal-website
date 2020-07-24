@@ -321,6 +321,7 @@ section {
   .scroll-container {
     display: flex;
     height: 400px;
+    width: 365px;
   }
 }
 
